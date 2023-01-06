@@ -21,16 +21,18 @@ type Table = {
 
 function setTheTable(): Table {
 
-	return {
-		seats: [
-			{
-				drink: {
-					type: 'Lemonade',
-					poured: false,
-				},
+	const table: Table = { seats: [] };
+
+	for (let i = 0; i < 4; i++) {
+		table.seats.push({
+			drink: {
+				type: 'Lemonade',
+				poured: false,
 			},
-		],
-	};
+		});
+	}
+	return table;
+
 	
 }
 
