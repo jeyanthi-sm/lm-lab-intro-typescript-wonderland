@@ -20,8 +20,7 @@ type Table = {
 };
 
 function setTheTable(): Table {
-	// 👉 FIXME ❌
-	return { seats: [] };
+	return {seats: new Array<Seat>};
 }
 
 export function attendATeaParty() {
