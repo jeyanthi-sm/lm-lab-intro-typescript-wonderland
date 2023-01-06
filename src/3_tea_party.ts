@@ -20,7 +20,18 @@ type Table = {
 };
 
 function setTheTable(): Table {
-	return {seats: new Array<Seat>};
+
+	return {
+		seats: [
+			{
+				drink: {
+					type: 'Lemonade',
+					poured: false,
+				},
+			},
+		],
+	};
+	
 }
 
 export function attendATeaParty() {
