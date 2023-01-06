@@ -15,8 +15,9 @@ export function meetTheQueen(): void {
 	print('The Queen has put you on trial for stealing tarts.');
 
 	let guilty: boolean = false;
+	let witnesNames:string[] = ['The March Hare','The Mad Hatter','The White Rabbit','The Cheshire Cat','The Queen', 'The King'];
 
-	let witnesses: Witness[] = getWitnesses(); 
+	let witnesses: Witness[] = getWitnesses(witnesNames); 
 	if (!witnesses || witnesses.length === 0) {
 		print(`No witnesses have come forward to defend you.`);
 		guilty = true;
@@ -44,9 +45,16 @@ export function meetTheQueen(): void {
 	}
 }
 
-function getWitnesses(): Array<Witness>  {
-	
-	return [
+function getWitnesses(witnessNames: string[]) : Witness[] {
+	let retWitness : Array<Witness> = [];
+	let IntWitness :Witness;
+
+	witnessNames.forEach(val =>{
+			retWitness.push({name:val,  giveEvidence:()=> 'Not Guilty', });
+	}
+	);
+	return retWitness;
+	/*return [
 	{ name: `The March Hare`, giveEvidence: () => {return 'Not Guilty'}, },
 	{ name: `The Mad Hatter`, giveEvidence: () => 'Not Guilty', },
 	{ name: `The White Rabbit`, giveEvidence: () => 'Not Guilty', },
@@ -54,5 +62,5 @@ function getWitnesses(): Array<Witness>  {
 	{ name: `The Queen`, giveEvidence: () => 'Not Guilty', },
 	{ name: `The King`, giveEvidence: () => 'Not Guilty', },
 ];
-	
+	*/
 }
