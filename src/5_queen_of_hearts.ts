@@ -1,5 +1,5 @@
 import { endAdventure } from '..';
-import { wakeUp } from './6_wake_up';
+import { jobHunt } from './5b_job_hunt';
 import { askQuestion, clear, print } from '../console';
 
 const verdicts = ['Guilty', 'Not Guilty'] as const;
@@ -40,8 +40,8 @@ export function meetTheQueen(): void {
 		return endAdventure();
 	} else {
 		print(`You have been found NOT GUILTY! Thank goodness. 🥳`);
-		print('Time to wake up...');
-		return askQuestion('Press ENTER to continue! ', wakeUp);
+		print('Time to look for a job...');
+		return askQuestion('Press ENTER to continue! ', jobHunt);
 	}
 }
 
@@ -54,13 +54,4 @@ function getWitnesses(witnessNames: string[]) : Witness[] {
 	}
 	);
 	return retWitness;
-	/*return [
-	{ name: `The March Hare`, giveEvidence: () => {return 'Not Guilty'}, },
-	{ name: `The Mad Hatter`, giveEvidence: () => 'Not Guilty', },
-	{ name: `The White Rabbit`, giveEvidence: () => 'Not Guilty', },
-	{ name: `The Cheshire Cat`, giveEvidence: () => 'Not Guilty', },
-	{ name: `The Queen`, giveEvidence: () => 'Not Guilty', },
-	{ name: `The King`, giveEvidence: () => 'Not Guilty', },
-];
-	*/
 }
